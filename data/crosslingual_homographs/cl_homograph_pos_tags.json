@@ -1,0 +1,564 @@
+{
+    "die": {
+        "DET": "D",
+        "PRON": "D",
+        "PROPN": "E",
+        "VERB": "E",
+        "NOUN": "E"
+    },
+    "see": {
+        "VERB": "E",
+        "NOUN": "D",
+        "PROPN": "D"
+    },
+    "was": {
+        "VERB": "E",
+        "PRON": "D",
+        "ADV": "D",
+        "PROPN": "D"
+    },
+    "not": {
+        "PART": "E",
+        "ADV": "E",
+        "NOUN": "D",
+        "CCONJ": "E"
+    },
+    "will": {
+        "VERB": "D",
+        "NOUN": "E"
+    },
+    "dem": {
+        "DET": "D",
+        "PRON": "D",
+        "PROPN": "E"
+    },
+    "und": {
+        "CCONJ": "D",
+        "PROPN": "E"
+    },
+    "das": {
+        "PRON": "D",
+        "DET": "D",
+        "SCONJ": "D",
+        "PROPN": "E"
+    },
+    "personal": {
+        "NOUN": "D",
+        "ADJ": "E"
+    },
+    "hat": {
+        "AUX": "D",
+        "VERB": "D",
+        "NOUN": "E"
+    },
+    "man": {
+        "PRON": "D",
+        "NOUN": "E",
+        "INTJ": "E"
+    },
+    "war": {
+        "AUX": "D",
+        "NOUN": "E",
+        "VERB": "D",
+        "PROPN": "E"
+    },
+    "tag": {
+        "PROPN": "D",
+        "VERB": "E"
+    },
+    "kinder": {
+        "NOUN": "D",
+        "PROPN": "D",
+        "ADJ": "E"
+    },
+    "after": {
+        "ADP": "E",
+        "SCONJ": "E",
+        "ADV": "E",
+        "PROPN": "D"
+    },
+    "lassen": {
+        "VERB": "D",
+        "PROPN": "E",
+        "AUX": "D"
+    },
+    "allen": {
+        "PRON": "D",
+        "PROPN": "E",
+        "ADV": "D"
+    },
+    "sag": {
+        "PROPN": "E",
+        "VERB": "D"
+    },
+    "tore": {
+        "NOUN": "D",
+        "PROPN": "D",
+        "VERB": "E"
+    },
+    "her": {
+        "PRON": "E",
+        "ADV": "D"
+    },
+    "made": {
+        "VERB": "E",
+        "PROPN": "D"
+    },
+    "des": {
+        "DET": "D",
+        "PROPN": "E",
+        "PRON": "D"
+    },
+    "seen": {
+        "VERB": "E",
+        "NOUN": "D",
+        "PROPN": "D"
+    },
+    "roh": {
+        "PROPN": "E",
+        "ADJ": "D"
+    },
+    "fast": {
+        "ADJ": "E",
+        "PROPN": "D"
+    },
+    "normal": {
+        "ADV": "D",
+        "NOUN": "E"
+    },
+    "van": {
+        "NOUN": "E",
+        "ADP": "D"
+    },
+    "dies": {
+        "PRON": "D",
+        "VERB": "E"
+    },
+    "los": {
+        "ADJ": "D",
+        "NOUN": "D",
+        "ADV": "D",
+        "DET": "E",
+        "PRON": "D"
+    },
+    "held": {
+        "VERB": "E",
+        "NOUN": "D",
+        "PROPN": "D"
+    },
+    "bad": {
+        "PROPN": "D",
+        "ADJ": "E",
+        "NOUN": "D"
+    },
+    "these": {
+        "PRON": "E",
+        "DET": "E",
+        "NOUN": "D"
+    },
+    "falls": {
+        "ADV": "D",
+        "SCONJ": "D",
+        "PROPN": "E",
+        "VERB": "E"
+    },
+    "stark": {
+        "ADJ": "D",
+        "ADV": "D",
+        "NOUN": "E",
+        "PROPN": "E"
+    },
+    "still": {
+        "ADJ": "D",
+        "PROPN": "E"
+    },
+    "analyse": {
+        "NOUN": "D",
+        "VERB": "E"
+    },
+    "fixer": {
+        "ADJ": "D",
+        "NOUN": "E"
+    },
+    "total": {
+        "ADJ": "E",
+        "NOUN": "E",
+        "ADV": "D",
+        "VERB": "E"
+    },
+    "fell": {
+        "VERB": "E",
+        "NOUN": "D"
+    },
+    "fort": {
+        "PROPN": "E",
+        "ADV": "D",
+        "NOUN": "E",
+        "ADJ": "E"
+    },
+    "links": {
+        "ADV": "D",
+        "PROPN": "E",
+        "VERB": "E",
+        "ADJ": "D"
+    },
+    "roman": {
+        "NOUN": "D",
+        "ADJ": "E"
+    },
+    "moderna": {
+        "PROPN": "D",
+        "NOUN": "D",
+        "ADJ": "E"
+    },
+    "knapp": {
+        "ADV": "D",
+        "ADJ": "D",
+        "PROPN": "E"
+    },
+    "taliban": {
+        "NOUN": "D",
+        "ADJ": "E"
+    },
+    "mich": {
+        "PRON": "D",
+        "PROPN": "E"
+    },
+    "toll": {
+        "NOUN": "E",
+        "ADJ": "D",
+        "ADV": "D",
+        "PROPN": "E"
+    },
+    "alter": {
+        "NOUN": "D",
+        "ADJ": "D",
+        "VERB": "E",
+        "PROPN": "D"
+    },
+    "junior": {
+        "ADJ": "E",
+        "NOUN": "E",
+        "PROPN": "E",
+        "ADV": "D"
+    },
+    "brief": {
+        "NOUN": "D",
+        "ADJ": "E",
+        "VERB": "E"
+    },
+    "brand": {
+        "ADJ": "E",
+        "ADV": "E",
+        "PROPN": "D",
+        "VERB": "E"
+    },
+    "ran": {
+        "VERB": "E",
+        "ADJ": "D",
+        "ADV": "D",
+        "NOUN": "E"
+    },
+    "tweet": {
+        "VERB": "E",
+        "PROPN": "D"
+    },
+    "else": {
+        "ADJ": "E",
+        "ADV": "E",
+        "PROPN": "D"
+    },
+    "royale": {
+        "NOUN": "E",
+        "ADJ": "D"
+    },
+    "rode": {
+        "VERB": "E",
+        "PROPN": "D"
+    },
+    "arm": {
+        "ADJ": "D",
+        "VERB": "E"
+    },
+    "bat": {
+        "NOUN": "E",
+        "VERB": "D",
+        "PROPN": "E"
+    },
+    "plane": {
+        "NOUN": "E",
+        "VERB": "D"
+    },
+    "kam": {
+        "VERB": "D",
+        "AUX": "D",
+        "PROPN": "E"
+    },
+    "https": {
+        "ADV": "E",
+        "PROPN": "D"
+    },
+    "intern": {
+        "NOUN": "E",
+        "ADV": "D",
+        "ADJ": "D"
+    },
+    "hart": {
+        "ADV": "D",
+        "ADJ": "D",
+        "PROPN": "E"
+    },
+    "bin": {
+        "AUX": "D",
+        "VERB": "D",
+        "NOUN": "E"
+    },
+    "divers": {
+        "NOUN": "E",
+        "ADJ": "D"
+    },
+    "dar": {
+        "ADV": "D",
+        "PROPN": "E"
+    },
+    "trans": {
+        "NOUN": "E",
+        "ADJ": "D"
+    },
+    "boot": {
+        "NOUN": "D",
+        "VERB": "E"
+    },
+    "rum": {
+        "PROPN": "E",
+        "ADV": "D",
+        "ADJ": "D"
+    },
+    "rein": {
+        "ADJ": "D",
+        "ADV": "D",
+        "VERB": "E",
+        "PROPN": "D"
+    },
+    "nah": {
+        "ADV": "D",
+        "ADJ": "D",
+        "NOUN": "D",
+        "INTJ": "E",
+        "PROPN": "D"
+    },
+    "lose": {
+        "VERB": "E",
+        "ADJ": "D",
+        "NOUN": "D"
+    },
+    "eng": {
+        "ADJ": "D",
+        "PROPN": "E",
+        "ADV": "D"
+    },
+    "rang": {
+        "NOUN": "D",
+        "VERB": "E",
+        "PROPN": "D"
+    },
+    "sprung": {
+        "NOUN": "D",
+        "VERB": "E"
+    },
+    "sage": {
+        "VERB": "D",
+        "PROPN": "E",
+        "NOUN": "E"
+    },
+    "stern": {
+        "ADJ": "E",
+        "NOUN": "D"
+    },
+    "wilder": {
+        "PROPN": "E",
+        "ADJ": "D"
+    },
+    "handy": {
+        "NOUN": "D",
+        "ADJ": "E",
+        "PROPN": "D"
+    },
+    "locker": {
+        "ADJ": "D",
+        "NOUN": "E",
+        "ADV": "D",
+        "PROPN": "E"
+    },
+    "wider": {
+        "ADJ": "E",
+        "ADP": "D",
+        "ADV": "D"
+    },
+    "hell": {
+        "ADJ": "D",
+        "PROPN": "E",
+        "NOUN": "E",
+        "INTJ": "E"
+    },
+    "bog": {
+        "VERB": "D",
+        "PROPN": "E"
+    },
+    "islamist": {
+        "NOUN": "D",
+        "ADJ": "E"
+    },
+    "spur": {
+        "NOUN": "D",
+        "VERB": "E"
+    },
+    "lied": {
+        "NOUN": "D",
+        "VERB": "E"
+    },
+    "dick": {
+        "NOUN": "E",
+        "ADJ": "D",
+        "PROPN": "E"
+    },
+    "kan": {
+        "PROPN": "E",
+        "AUX": "D"
+    },
+    "stall": {
+        "NOUN": "D",
+        "VERB": "E"
+    },
+    "warne": {
+        "VERB": "D",
+        "PROPN": "E"
+    },
+    "wow": {
+        "INTJ": "E",
+        "PROPN": "D",
+        "VERB": "E"
+    },
+    "dan": {
+        "PROPN": "E",
+        "SCONJ": "D",
+        "ADV": "D"
+    },
+    "optimum": {
+        "ADJ": "E",
+        "NOUN": "D"
+    },
+    "gothic": {
+        "PROPN": "D",
+        "ADJ": "E"
+    },
+    "resurrected": {
+        "PROPN": "D",
+        "VERB": "E"
+    },
+    "uncharted": {
+        "PROPN": "D",
+        "ADJ": "E"
+    },
+    "drum": {
+        "ADJ": "D",
+        "NOUN": "E",
+        "VERB": "E",
+        "ADV": "D"
+    },
+    "wen": {
+        "PRON": "D",
+        "PROPN": "E"
+    },
+    "viral": {
+        "ADJ": "E",
+        "NOUN": "E",
+        "PROPN": "E",
+        "ADV": "D"
+    },
+    "devise": {
+        "NOUN": "D",
+        "VERB": "E"
+    },
+    "non": {
+        "ADJ": "E",
+        "PROPN": "D",
+        "ADV": "E"
+    },
+    "stiller": {
+        "PROPN": "E",
+        "ADJ": "D"
+    },
+    "holt": {
+        "VERB": "D",
+        "PROPN": "E"
+    },
+    "unreal": {
+        "ADJ": "E",
+        "PROPN": "D"
+    },
+    "transparent": {
+        "ADJ": "E",
+        "NOUN": "D"
+    },
+    "attest": {
+        "VERB": "E",
+        "NOUN": "D"
+    },
+    "remastered": {
+        "PROPN": "D",
+        "VERB": "E"
+    },
+    "grab": {
+        "VERB": "E",
+        "NOUN": "D"
+    },
+    "alma": {
+        "PROPN": "D",
+        "ADJ": "E"
+    },
+    "diagnose": {
+        "NOUN": "D",
+        "VERB": "E"
+    },
+    "muster": {
+        "NOUN": "D",
+        "VERB": "E"
+    },
+    "positives": {
+        "NOUN": "E",
+        "ADJ": "D"
+    },
+    "platt": {
+        "ADJ": "D",
+        "PROPN": "E"
+    },
+    "nasser": {
+        "PROPN": "E",
+        "ADJ": "D"
+    },
+    "fein": {
+        "ADJ": "D",
+        "PROPN": "E"
+    },
+    "extremes": {
+        "ADJ": "D",
+        "NOUN": "E"
+    },
+    "til": {
+        "PROPN": "D",
+        "ADP": "E"
+    },
+    "lest": {
+        "SCONJ": "E",
+        "VERB": "D"
+    },
+    "separates": {
+        "VERB": "E",
+        "ADJ": "D"
+    },
+    "simmering": {
+        "VERB": "E",
+        "PROPN": "D"
+    }
+}
