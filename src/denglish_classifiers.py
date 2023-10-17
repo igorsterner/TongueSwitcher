@@ -601,16 +601,15 @@ def main_rules_test(target_file, pred_file, label_list, name):
 def main():
 
     print("Denglish CRF")
-    main_crf_cross_validation("/home/is473/rds/hpc-work/Denglisch/corpus/Manu_corpus_collapsed.csv", LABEL_LIST_FURTHER_COLLAPSED, 10, name='denglish-o-so') # 10-fold cross-validation
+    main_crf_cross_validation("../data/denglish/Manu_corpus_collapsed.csv", LABEL_LIST_FURTHER_COLLAPSED, 10, name='denglish') # 10-fold cross-validation
 
     print("tsBERT")
-    main_mbert_cross_validation("/home/is473/rds/hpc-work/Denglisch/corpus/Manu_corpus_collapsed.csv", LABEL_LIST_FURTHER_COLLAPSED, 10, pretrained_name='/home/is473/rds/hpc-work/4X1/ComingSoon/Experiments/mbert_pretraining_on_tongueswitcher_bs_32_warmup_10000_weight_decay/models/checkpoint-191950', name='tsbert-o-so') 
+    main_mbert_cross_validation("../data/denglish/Manu_corpus_collapsed.csv", LABEL_LIST_FURTHER_COLLAPSED, 10, pretrained_name='igorsterner/german-english-code-switching-bert', name='tsbert') 
 
     print("TongueSwitcher")
-    main_rules_test("/home/is473/rds/hpc-work/Denglisch/corpus/Manu_corpus_collapsed.csv", "/home/is473/rds/hpc-work/4X1/ComingSoon/resources/denglish_labelled_with_tongueswitcher.csv", LABEL_LIST_FURTHER_COLLAPSED, name='tongueswitcher-o-so') # 10-fold cross-validation
+    main_rules_test("../data/denglish/Manu_corpus_collapsed.csv", "../data/resources/denglish_labelled_with_tongueswitcher.csv", LABEL_LIST_FURTHER_COLLAPSED, name='tongueswitcher') # 10-fold cross-validation
 
 #### END MAIN CODE ####################################################################################################
-
 
 
 if __name__ == "__main__":

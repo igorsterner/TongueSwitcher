@@ -922,5 +922,7 @@ def main():
 
     print_latex_table(all_results, header_map = {"island": "Island", "short island": "Short Island"}, labels = ["island", "short island"], metrics = ["precision", "recall", "f1-score"], entity=True) 
 
+    denglish_rules("../data/denglish/Manu_corpus_collapsed.csv", out_file = "./data/resources/denglish_labelled_with_tongueswitcher.csv")
+
 if __name__ == '__main__':
     main()
