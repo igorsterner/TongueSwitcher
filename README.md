@@ -14,7 +14,9 @@ TongueSwitcher Corpus: https://zenodo.org/records/10011601
 
 ## Wordlists
 
-All cached wordlist resources are provided to run TongueSwitcher code-switching identification, you will not need to download anything other than this repo. To compile our wordlists from scratch, you will need to download the following resources:
+All cached wordlist resources are provided to run TongueSwitcher code-switching identification, you will not need to download anything other than this repo. Easy to read wordlists as text files are available in resources/wordlists_as_text_files. 
+
+To compile our wordlists from scratch, you will need to download the following resources:
 
 [Wortschatz Leipzig Corpora](https://wortschatz.uni-leipzig.de/en/download), into `data/wordlist_data/wortschatz_leipzig`:
 - 100k-de-at-news-2012.txt
