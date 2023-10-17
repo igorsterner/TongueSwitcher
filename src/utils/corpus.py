@@ -1,4 +1,4 @@
-# Taken from Denglish Corpus (https://github.com/HaifaCLG/Denglisch)
+# Taken from Denglisch Corpus (https://github.com/HaifaCLG/Denglisch)
 
 import pandas
 

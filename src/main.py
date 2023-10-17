@@ -200,7 +200,7 @@ def main(config):
         trainer.train()
 
     else:
-        print("Unrecognized mode. Please choose either 'tongueswitcher', 'mbert_pretraining' or 'mbert_classification'")
+        print("Unrecognized mode. Please choose either 'tongueswitcher', 'bert_pretraining' or 'tsbert_classification'")
 
 
 def initialization(args):

@@ -32,7 +32,7 @@ class DataLoaderBertClassification(DataLoaderWrapper):
         train_tokens, train_labels = [], []
         train_subword_labels = []
 
-        corpus = Corpus(self.config.denglish_corpus)
+        corpus = Corpus(self.config.denglisch_corpus)
         toks, tags = corpus.get_sentences()
         for sent_toks, sent_tags in tqdm(zip(toks, tags)):
 

@@ -38,7 +38,7 @@ from tokenizations import get_alignments
 cost = 0
 
 tongueswitcher_file = Path("/results/rules-results.pkl")
-denglish_file = Path("/results/denglish-results.pkl")
+denglisch_file = Path("/results/denglisch-results.pkl")
 tsbert_file = Path("/results/tsbert-results.pkl")
 
 gold_file = Path("/results/gold.pkl")
@@ -415,7 +415,7 @@ def sent2features(sent, most_freq_ngrams=[]):
     """
     return [word2features(sent, i, most_freq_ngrams) for i in range(len(sent))]
 
-def denglish_crf(all_data, train_file="../data/denglish/Manu_corpus_collapsed.csv"):
+def denglisch_crf(all_data, train_file="../data/denglisch/Manu_corpus_collapsed.csv"):
 
     train_corpus = Corpus(train_file)
 
@@ -423,7 +423,7 @@ def denglish_crf(all_data, train_file="../data/denglish/Manu_corpus_collapsed.cs
     word_list, _ = train_corpus.get_tokens()
     most_freq_ngrams = get_ngrams(word_list, 200)
 
-    model_file = "../data/denglish/model_collapsed.pkl"
+    model_file = "../data/denglisch/model_collapsed.pkl"
 
     if os.path.isfile(model_file):
         with open(model_file, "rb") as f:
@@ -461,7 +461,7 @@ def denglish_crf(all_data, train_file="../data/denglish/Manu_corpus_collapsed.cs
 
     return output
 
-def denglish_rules(file_name, out_file, flair_cache_file=""):
+def denglisch_rules(file_name, out_file, flair_cache_file=""):
     
     corpus = Corpus(file_name)
     idxs, toks, tags = corpus.get_sentences(index=True)
@@ -484,29 +484,6 @@ def denglish_rules(file_name, out_file, flair_cache_file=""):
         new_tags = all_tags[str(id)]
         corpus.set_tags(i, new_tags)
 
-
-    corpus.to_csv(out_file)
-
-def denglish_mbert(file_name, model_path, out_file):
-    
-    corpus = Corpus(file_name)
-    idxs, toks, tags = corpus.get_sentences(index=True)
-
-    for i in range(len(toks)):
-        toks[i] = [',' if t == '' else t for t in toks[i]]
-
-    toks = [[t.replace("’", "'").replace("”", "'").replace("“", "'").replace("„", "'").replace("―", "-").replace("–", "-").replace("…", "...").replace("`", "'") for t in sent_toks] for sent_toks in toks]
-
-    toks = [replace_emojis_with_X(sent_toks) for sent_toks in toks]
-
-    input_data = {str(id): {'text': ' '.join(t), 'tokens': t, 'date': '2023-03'} for id, t in enumerate(toks)}
-
-    all_tags = mbert_label(input_data, model_path=model_path, punct=False) 
-
-    for id, i in enumerate(idxs):
-        assert len(all_tags[str(id)]) == len(toks[id]), toks[id]
-        new_tags = all_tags[str(id)]
-        corpus.set_tags(i, new_tags)
 
     corpus.to_csv(out_file)
 
@@ -625,7 +602,7 @@ def mbert_label(all_data, model_path, punct=True):
     output_labels = {}
     task = "token-classification"
     mbert_token_classification = pipeline(task, model=model_path, tokenizer=model_path)
-    denglish_mapping = {'SO': 'D', 'SD': 'D', 'SE': 'E'}
+    denglisch_mapping = {'SO': 'D', 'SD': 'D', 'SE': 'E'}
     def process_tweet(id):
         input_text = all_data[id]["text"]
         classification_output = mbert_token_classification(input_text)
@@ -634,7 +611,7 @@ def mbert_label(all_data, model_path, punct=True):
         original_tokens = all_data[id]["tokens"]
 
         mbert_word_labels = get_subword_labels(mbert_subword_tokens, original_tokens, mbert_subword_labels)
-        mbert_word_labels = [denglish_mapping[label] if label in denglish_mapping else label for label in mbert_word_labels]
+        mbert_word_labels = [denglisch_mapping[label] if label in denglisch_mapping else label for label in mbert_word_labels]
         if punct:
             mbert_word_labels = [label if i not in all_data[id]["punct"] else "P" for i, label in enumerate(mbert_word_labels)]
 
@@ -733,7 +710,7 @@ def short_map_to_bio(labels):
         
     return bio_labels
 
-def cs_token_f1_score(all_data, file_name, baseline = False, tagger=False, rules=False, denglish=False, prompt=False, mbert=False, model_path = "", islands=False, reset=False):
+def cs_token_f1_score(all_data, file_name, baseline = False, tagger=False, rules=False, denglisch=False, prompt=False, mbert=False, model_path = "", islands=False, reset=False):
 
     if baseline:
         prediction_labels = identification(all_data, "char_baseline", file_name)
@@ -741,8 +718,8 @@ def cs_token_f1_score(all_data, file_name, baseline = False, tagger=False, rules
         prediction_labels = identification(all_data, "rules_based", file_name, flair_cache_file="../data/cache/rules_flair_cache.pkl")
     elif tagger:
         prediction_labels = identification(all_data, "spacy_tagger", file_name)
-    elif denglish:
-        prediction_labels = identification(all_data, "denglish_crf", file_name)
+    elif denglisch:
+        prediction_labels = identification(all_data, "denglisch_crf", file_name)
     elif mbert:
         prediction_labels = identification(all_data, "mbert_label", file_name, model_path=model_path)
     elif prompt:
@@ -773,7 +750,7 @@ def cs_token_f1_score(all_data, file_name, baseline = False, tagger=False, rules
     results["F1"] = {"P": p, "R": r, "F1": f, "support": s}
     return results
 
-def cs_entity_f1_score(all_data, file_name, baseline = False, tagger=False, rules=False, denglish=False, prompt=False, mbert=False, model_path = "", island=False):
+def cs_entity_f1_score(all_data, file_name, baseline = False, tagger=False, rules=False, denglisch=False, prompt=False, mbert=False, model_path = "", island=False):
 
 
     if baseline:
@@ -782,8 +759,8 @@ def cs_entity_f1_score(all_data, file_name, baseline = False, tagger=False, rule
         prediction_labels = identification(all_data, "rules_based", file_name)
     elif tagger:
         prediction_labels = identification(all_data, "spacy_tagger", file_name)
-    elif denglish:
-        prediction_labels = identification(all_data, "denglish_crf", file_name)
+    elif denglisch:
+        prediction_labels = identification(all_data, "denglisch_crf", file_name)
     elif mbert:
         prediction_labels = identification(all_data, "mbert_label", file_name, model_path=model_path)
     elif prompt:
@@ -842,7 +819,7 @@ def print_latex_table(all_results, header_map, labels=['D', 'E', 'M', 'F1'], met
 
         print("\\\\")
 
-        if key == "Denglish CRF":
+        if key == "denglisch CRF":
             print("\\midrule")
         
     print("\\bottomrule")
@@ -881,7 +858,7 @@ def main():
     all_results = {
         # "Lingua": cs_token_f1_score(all_data, baseline_file, baseline=True),
         # "GPT-4": cs_token_f1_score(all_data, prompt_file, prompt=True),
-        # "Denglish CRF": cs_token_f1_score(all_data, denglish_file, denglish=True),
+        # "denglisch CRF": cs_token_f1_score(all_data, denglisch_file, denglisch=True),
         # "BERT": cs_token_f1_score(all_data, bert_file, mbert=True, model_path = bert_model),
         # "mBERT": cs_token_f1_score(all_data, mbert_file, mbert=True, model_path = mbert_model),
         # "gBERT": cs_token_f1_score(all_data, gbert_file, mbert=True, model_path = gbert_model),
@@ -894,7 +871,7 @@ def main():
     all_results = {
         # "Lingua": {},
         # "GPT-4": {},
-        "Denglish CRF": {},
+        "denglisch CRF": {},
         # "BERT": {},
         # "mBERT": {},
         # "gBERT": {},
@@ -904,7 +881,7 @@ def main():
 
     # all_results["Lingua"]["island"] = cs_entity_f1_score(all_data, baseline_file, baseline=True)
     # all_results["GPT-4"]["island"] = cs_entity_f1_score(all_data, prompt_file, prompt=True)
-    all_results["Denglish CRF"]["island"] = cs_entity_f1_score(all_data, denglish_file, denglish=True)
+    all_results["denglisch CRF"]["island"] = cs_entity_f1_score(all_data, denglisch_file, denglisch=True)
     # all_results["BERT"]["island"] = cs_entity_f1_score(all_data, bert_file, mbert=True, model_path = bert_model)
     # all_results["mBERT"]["island"] = cs_entity_f1_score(all_data, mbert_file, mbert=True, model_path = mbert_model)
     # all_results["gBERT"]["island"] = cs_entity_f1_score(all_data, gbert_file, mbert=True, model_path = gbert_model)
@@ -913,7 +890,7 @@ def main():
 
     # all_results["Lingua"]["short island"] = cs_entity_f1_score(all_data, baseline_file, baseline=True, island=True)
     # all_results["GPT-4"]["short island"] = cs_entity_f1_score(all_data, prompt_file, prompt=True, island=True)
-    all_results["Denglish CRF"]["short island"] = cs_entity_f1_score(all_data, denglish_file, denglish=True, island=True)
+    all_results["denglisch CRF"]["short island"] = cs_entity_f1_score(all_data, denglisch_file, denglisch=True, island=True)
     # all_results["BERT"]["short island"] = cs_entity_f1_score(all_data, bert_file, mbert=True, model_path = bert_model, island=True)
     # all_results["mBERT"]["short island"] = cs_entity_f1_score(all_data, mbert_file, mbert=True, model_path = mbert_model, island=True)
     # all_results["gBERT"]["short island"] = cs_entity_f1_score(all_data, gbert_file, mbert=True, model_path = gbert_model, island=True)
@@ -922,7 +899,7 @@ def main():
 
     print_latex_table(all_results, header_map = {"island": "Island", "short island": "Short Island"}, labels = ["island", "short island"], metrics = ["precision", "recall", "f1-score"], entity=True) 
 
-    denglish_rules("../data/denglish/Manu_corpus_collapsed.csv", out_file = "./data/resources/denglish_labelled_with_tongueswitcher.csv")
+    denglisch_rules("../data/denglisch/Manu_corpus_collapsed.csv", out_file = "./data/resources/denglisch_labelled_with_tongueswitcher.csv")
 
 if __name__ == '__main__':
     main()

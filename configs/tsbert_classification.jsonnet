@@ -27,7 +27,7 @@ local override = {
   "metrics": [
   ],
   "bert_model_checkpoint": "igorsterner/german-english-code-switching-bert",
-  "denglish_corpus": "../data/denglish/Manu_corpus_collapsed.csv"
+  "denglisch_corpus": "../data/denglisch/Manu_corpus_collapsed.csv"
 };
 
 std.mergePatch(base_env, override)

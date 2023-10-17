@@ -91,6 +91,16 @@ python main.py "../configs/tsbert_classification.jsonnet" \
     --opts batch_size=16 train_epochs=3 learning_rate=3e-5
 ```
 
+## Evaluation
+
+Three evaluation scrips are provided to run our evaluation:
+
+`tongueswitcher_evaluation.py` computes token- and entity-based metrics on the TongueSwitcher testset. It also runs inference using the TongueSwitcher rule-based system on the Denglisch corpus.
+`denglish_classifiers.py` computes metrics on this output on the Denglisch Corpus. It also implements the tsBERT cross-validation setup, as well as the original Denglisch CRF.
+`crosslingual_homographs_evaluation.py` implements our token-based metrics for evaluation of cross-lingual homographs.
+
+Note that the dependencies suggested are insufficient to run Lingua, as their system requires python > 3.8.
+
 ## BibTeX entry and citation info
 
 ```

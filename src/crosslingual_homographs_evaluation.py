@@ -68,7 +68,7 @@ if os.path.isfile(CACHE_ALL_RESULTS):
 else:
     outputs = {}
 
-systems = ["lingua", "gpt", "denglish", "eBERT", "gBERT", "mBERT", "tsBERT", "tongueswitcher"]
+systems = ["lingua", "gpt", "denglisch", "eBERT", "gBERT", "mBERT", "tsBERT", "tongueswitcher"]
 
 reset = True
 
@@ -76,8 +76,8 @@ reset = True
 #     outputs["lingua"] = char_baseline(test_cases)
 # if "gpt" not in outputs:
 #     outputs["gpt"] = run_ambiguous_prompt(test_cases)
-if "denglish" not in outputs:
-    outputs["denglish"] = denglish_crf(test_cases)
+if "denglisch" not in outputs:
+    outputs["denglisch"] = denglisch_crf(test_cases)
 # if "eBERT" not in outputs:
 #     outputs["eBERT"] = mbert_label(test_cases, model_path=bert_model, punct=False)
 # if "gBERT" not in outputs:
