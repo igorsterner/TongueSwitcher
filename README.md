@@ -99,9 +99,9 @@ Three evaluation scrips are provided to run our evaluation:
 
 `denglisch_classifiers.py` computes metrics on this output on the Denglisch Corpus. It also implements the tsBERT cross-validation setup, as well as the original Denglisch CRF.
 
-`crosslingual_homographs_evaluation.py` implements our token-based metrics for evaluation of cross-lingual homographs.
+`interlingual_homographs_evaluation.py` implements our token-based metrics for evaluation of interlingual homographs.
 
-Note that the dependencies suggested are insufficient to run Lingua, as their system requires python > 3.8.
+Note that the dependencies suggested are insufficient to run Lingua, as their system requires python >= 3.8.
 
 ## BibTeX entry and citation info
 

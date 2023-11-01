@@ -4,7 +4,6 @@ local seed=2021;
 
 
 local override = {
-  "platform_type": "pytorch",
   "experiment_name": "default",
   "seed": seed,
   "data_loader": {

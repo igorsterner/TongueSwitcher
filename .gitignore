@@ -1,0 +1,9 @@
+data/wordlist_data/wortschatz_leipzig
+data/wordlist_data/dictcc.txt
+data/wordlist_data/urban_dictionary
+Experiments/
+src/wandb
+data/cache/rules_flair_cache.pkl
+data/cache/clh_flair_cache.pkl
+cache/
+tongueswitcher-env-test3/

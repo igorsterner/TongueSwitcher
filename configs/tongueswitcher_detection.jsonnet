@@ -4,7 +4,6 @@ local seed=2021;
 
 
 local override = {
-  "platform_type": "pytorch",
   "experiment_name": "default",
   "seed": seed,
   "data_loader": {
@@ -34,7 +33,7 @@ local override = {
     "function": 'tongueswitcher_detect'
   },
   "seidel_path": "../data/wordlist_data/seidel.txt",
-  "crosslingual_homographs_dir": "../data/crosslingual_homographs/cl_homograph_pos_tags.json",
+  "interlingual_homographs_dir": "../data/interlingual_homographs/il_homograph_pos_tags.json",
   "bigram_data_dir": "../data/bigrams/bigrams.json",
   "cities_data_dir": "../data/wordlist_data/cities.txt",
   "boys_names_data_dir": "../data/wordlist_data/boys_names.txt",

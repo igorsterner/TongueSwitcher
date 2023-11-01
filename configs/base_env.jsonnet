@@ -59,8 +59,8 @@ local dictionaries = {
   "TENSORBOARD_FOLDER": "",
   "WANDB": {
     "CACHE_DIR":  wandb_cache_dir,
-    "entity": "YOUR_ENTITY",
-    "project": "YOUR_PROJECT",
+    "entity": "igorsterner",
+    "project": "ComingSoon",
     "tags": [""],
   },
   "platform_type": "",
