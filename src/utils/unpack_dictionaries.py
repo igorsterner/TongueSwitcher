@@ -91,7 +91,7 @@ def dictcc_multiword(dict_path, lan):
     
     return multiwords
 
-def dictcc_identical_homonyms(dict_path, gpt_borrow):
+def dictcc_homographs(dict_path, gpt_borrow):
 
     german_dict = defaultdict(list)
     english_dict = defaultdict(list)
@@ -142,15 +142,15 @@ def dictcc_identical_homonyms(dict_path, gpt_borrow):
 
             
     
-    false_friends = {germ for germ in german_dict.keys() if (len(germ) > 2) and (germ in english_dict) and (germ not in english_dict[germ])}
-    false_friends = {eng for eng in false_friends if (len(eng) > 2) and (eng in german_dict) and (eng not in german_dict[eng])}
+    homographs = {germ for germ in german_dict.keys() if (len(germ) > 2) and (germ in english_dict) and (germ not in english_dict[germ])}
+    homographs = {eng for eng in homographs if (len(eng) > 2) and (eng in german_dict) and (eng not in german_dict[eng])}
 
-    false_friends_gpt = [w for w in false_friends if (w in gpt_borrow) and ((gpt_borrow[w] == 'german') or (gpt_borrow[w] == 'english'))]
+    homographs_gpt = [w for w in homographs if (w in gpt_borrow) and ((gpt_borrow[w] == 'german') or (gpt_borrow[w] == 'english'))]
 
     gpt_borrow_ff = {}
 
     for word, lan in gpt_borrow.items():
-        if word in false_friends_gpt:
+        if word in homographs_gpt:
             gpt_borrow_ff[word] = 'mixed'
         else:
             gpt_borrow_ff[word] = lan

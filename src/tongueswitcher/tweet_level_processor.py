@@ -10,7 +10,7 @@ class TongueSwitcher(TSExecutor, Processor):
         super().__init__(config, data_loader)    
 
         self.bigrams = self.open_json(config.bigram_data_dir)
-        self.clh_pos_tags = self.open_json(config.crosslingual_homographs_dir)
+        self.clh_pos_tags = self.open_json(config.interlingual_homographs_dir)
 
     def tongueswitcher_detect(self, annotated_words):
 

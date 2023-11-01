@@ -1,6 +1,7 @@
 import copy
 import json
 
+
 class Processor():
     def __init__(self, config, data_loader):
         super().__init__(config, data_loader)    
@@ -23,7 +24,7 @@ class Processor():
                 annotated_words[i-1]["lan"] = "E"
                 continue
             elif word.lower() in self.clh_pos_tags:
-                lan = self.cl_homographs_checker(word.lower(), annotated_words[i]["pos"])
+                lan = self.il_homographs_checker(word.lower(), annotated_words[i]["pos"])
                 annotated_words[i]["clh"] = True
                 if lan == "E":
                     annotated_words[i]["lan"] = "E"
@@ -293,12 +294,7 @@ class Processor():
         with open(dir, 'r', encoding = 'utf-8') as f:
             return f.read().splitlines()
 
-    @staticmethod
-    def open_cl_homonyms(dir):
-        with open(dir, 'r', encoding='utf-8') as f:
-            return json.load(f)
-
-    def cl_homographs_checker(self, word, pos):
+    def il_homographs_checker(self, word, pos):
 
         if word not in self.clh_pos_tags:
             return "U"

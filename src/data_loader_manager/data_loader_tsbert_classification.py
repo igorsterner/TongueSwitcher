@@ -1,13 +1,13 @@
 import re
 
 import torch
-from data_loader_manager.data_loader_wrapper import DataLoaderWrapper
+from tokenizations import get_alignments
 from torch.utils.data import Dataset
 from tqdm import tqdm
 from transformers import DataCollatorForTokenClassification
-from utils.corpus import Corpus
 
-from tokenizations import get_alignments
+from data_loader_manager.data_loader_wrapper import DataLoaderWrapper
+from utils.corpus import Corpus
 
 
 class ClassificationDataset(Dataset):

@@ -40,7 +40,7 @@ def save_to_json(data, output_file):
 en_input_file = "../data/wordlist_data/eng_news_2020_1M-sentences.txt"
 de_input_file = "../data/wordlist_data/deu_news_2021_1M-sentences.txt"
 
-output_file = "../data/crosslingual_homographs/clh_pos_tags.json"
+output_file = "../data/interlingual_homographs/ilh_pos_tags.json"
 
 if CACHE_FILE.exists():
     with open(CACHE_FILE, "rb") as f:

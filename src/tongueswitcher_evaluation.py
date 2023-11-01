@@ -14,25 +14,24 @@ import _jsonnet
 import emoji
 import openai
 import spacy
-import utils.classifier_feature_util as clfutil
 from easydict import EasyDict
 from lingua import Language, LanguageDetectorBuilder
 from nltk import ngrams
 from sklearn.metrics import precision_recall_fscore_support
 from spacy.tokens import Doc
-from tongueswitcher import *
+from tokenizations import get_alignments
 from tqdm import tqdm
 from transformers import pipeline
-from utils.corpus import Corpus
 
-from tokenizations import get_alignments
+import utils.classifier_feature_util as clfutil
+from tongueswitcher import *
+from utils.corpus import Corpus
 
 nlp_big = spacy.load('de_dep_news_trf')
 
 from flair.data import Sentence
 from flair.models import SequenceTagger
 from seqeval.metrics import classification_report
-
 from tokenizations import get_alignments
 
 cost = 0

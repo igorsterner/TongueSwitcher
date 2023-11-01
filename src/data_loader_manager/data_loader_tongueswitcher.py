@@ -176,7 +176,7 @@ class DataLoaderCS(DataLoaderWrapper):
                 print(len(gpt_borrow))
                 gpt_borrow.update(json.load(f))
 
-        gpt_borrow = dictcc_identical_homonyms(self.config.dictcc_data_dir, gpt_borrow)
+        gpt_borrow = dictcc_homographs(self.config.dictcc_data_dir, gpt_borrow)
         
         for n in names(self.config.boys_names_data_dir):
             if n.lower() in dicts["en"]:

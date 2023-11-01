@@ -3,7 +3,6 @@ import re
 
 import ftlangdetect.detect as detect_ft
 from cleantext import clean
-from langdetect import detect_langs
 from tqdm import tqdm
 
 
@@ -70,52 +69,6 @@ def cleanrem(tweets):
     num_after = len(tweets)
     # print(f"Removed {100*(num_before-num_after)/num_before}% of tweets")
     
-    return tweets
-
-def cleanlan(tweets):
-    '''
-    Method to remove tweets that do not identify as German after cleaning
-    :return: list of tweets
-    '''
-    print("Removing non-german tweets...")
-
-    clean_tweets = []
-
-    num_before = len(tweets)
-    
-    # for tweet_id in (pbar := tqdm(list(tweets))):
-    #     pbar.set_description(f"clean-lang")
-    for tweet_id in copy.deepcopy(tweets):
-        tweet_prim = str(tweets[tweet_id]["text"])
-        tweet_prim = re.sub('".*?"', '', tweet_prim)
-        tweet_prim = re.sub("[\(\<].*?[\)\>]", "", tweet_prim).strip()
-
-        # Remove short tweets due to poor language detection
-        if len(tweet_prim.split()) > 7:
-            try:
-                detection = detect_langs(tweet_prim)
-
-                detected_langs = [i.lang for i in detection]
-                both_langs_there = 'en' in detected_langs and 'de' in detected_langs
-                neither_main_lang = detection[0].lang != 'de' and detection[0].lang != 'en'
-                other_strong_second = len(detection) > 1 and (detection[1].lang != 'de' and detection[1].lang != 'en') and (detection[1].prob > 0.3)
-                
-                if both_langs_there:
-                    tweets[tweet_id]["text"] = tweet_prim
-                elif neither_main_lang or other_strong_second:
-                    tweets.pop(tweet_id)
-                else:
-                    tweets[tweet_id]["text"] = tweet_prim
-                # else:
-                #     tweets.pop(tweet_id)
-            except:
-                tweets.pop(tweet_id)
-                continue
-        else:
-            tweets.pop(tweet_id)
-
-    num_after = len(tweets)
-    print(f"Removed {100*(num_before-num_after)/num_before}% of tweets")
     return tweets
 
 def clean_lingua(tweets):

@@ -9,20 +9,19 @@ import warnings
 import emoji
 import numpy as np
 import torch
-import utils.classifier_feature_util as clfutil
 from nltk import ngrams
 from sklearn import metrics
 from sklearn.model_selection import KFold
 from sklearn_crfsuite import CRF
+from tokenizations import get_alignments
 from torch.utils.data import Dataset
 from tqdm import tqdm
 from transformers import (AutoModelForTokenClassification, AutoTokenizer,
-                          BertTokenizer,
-                          DataCollatorForTokenClassification, Trainer,
-                          TrainingArguments)
-from utils.corpus import Corpus
+                          BertTokenizer, DataCollatorForTokenClassification,
+                          Trainer, TrainingArguments)
 
-from tokenizations import get_alignments
+import utils.classifier_feature_util as clfutil
+from utils.corpus import Corpus
 
 os.environ['TOKENIZERS_PARALLELISM'] = 'false' 
 

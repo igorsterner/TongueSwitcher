@@ -1,8 +1,9 @@
 import logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-import wandb
 from HanTa import HanoverTagger as ht
+
+import wandb
 from tongueswitcher import *
 
 logger = logging.getLogger(__name__)
@@ -13,8 +14,9 @@ from pprint import pprint
 from easydict import EasyDict
 from flair.data import Sentence
 from flair.models import SequenceTagger
-from tongueswitcher.base_executor import BaseExecutor
 from tqdm import tqdm
+
+from tongueswitcher.base_executor import BaseExecutor
 from utils.dirs import *
 
 
